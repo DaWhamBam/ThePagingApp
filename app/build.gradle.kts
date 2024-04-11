@@ -7,6 +7,10 @@ android {
     namespace = "com.example.thepagingapp2"
     compileSdk = 34
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.example.thepagingapp2"
         minSdk = 24
@@ -55,8 +59,6 @@ dependencies {
     // RxJava3 support
     implementation("androidx.paging:paging-rxjava3:$paging_version")
 
-
-
     // Hilt Dagger
     implementation("com.google.dagger:hilt-android:2.51.1")
     annotationProcessor("com.google.dagger:hilt-compiler:2.51.1")
@@ -64,11 +66,14 @@ dependencies {
     // Glide
     implementation("com.github.bumptech.glide:glide:4.16.0")
 
+
     // Lifecycle
     val lifecycle_version = "2.7.0"
     val arch_version = "2.2.0"
     // ViewModel
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
     // LiveData
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
 }
